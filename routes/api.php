@@ -20,9 +20,9 @@ use Tqdev\PhpCrudApi\Config;
 
 Route::any('/{any}', function (ServerRequestInterface $request) { 
     $config = new Config([
-        'username' => 'root',
-        'password' => '',
-        'database' => 'crudapi',
+        'username' => env('DB_USERNAME'),
+        'password' => env('DB_PASSWORD'),
+        'database' => env('DB_DATABASE'),
         'basePath' => '/api',
     ]);
     $api = new Api($config);
